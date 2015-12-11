@@ -6,27 +6,36 @@ $(document).ready(function(){
 		//prevents the default function of the submit button from firing
 		//doesn't send the input away
 		//console.log($("#newInput").val());
-		$('ul').append('<li>' + $("#newInput").val() + '<input class ="check" type="checkbox"/></li>');
+		$('ul').append('<li>' + $("#newInput").val() + '<i class="fa fa-check-square"></i></li>');
+		//this adds an item to the list with the same formatting as the ones that are already there
 		$('#newInput').val("");
-
-		var $item = $('li');
-
-		$item.on('click', function(){
+		//this just clears the previous input from the text box
+		$('li').on('click', function(){
 			$(this).toggleClass('complete');
 		});
-		$('.check').on('click', function(){
+
+		$('.fa').on('click', function(){
 			$(this).parent().remove();
 		});
 		
 	});
 
-	var $item = $('li');
-	$item.on('click', function(){
-			$(this).toggleClass('complete');
+	$('li').on('click', function(){
+		$(this).toggleClass('complete');
 	});
 
-	$('.check').on('click', function(){
-			$(this).parent().remove();
+	$('.fa').on('click', function(){
+		$(this).parent().slideUp(200);
+		$(this).parent().hasClass('complete');
 	});
+
+	// $('.fa').on('click', function(){
+	// 	if ($('li').hasClass('complete')){
+	// 		console.log('got it');
+	// 		$(this).remove();
+	// 	} else {
+	// 		console.log('nope');
+	// 	};
+	// });
 });
 
