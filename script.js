@@ -6,8 +6,10 @@ $(document).ready(function(){
 		//prevents the default function of the submit button from firing
 		//doesn't send the input away
 		//console.log($("#newInput").val());
-		$('ul').append('<li>' + $("#newInput").val() + '<i class="fa fa-check-square"></i></li>');
-		//this adds an item to the list with the same formatting as the ones that are already there
+		if ($('#newInput').val().length > 1){
+				$('ul').append('<li><p class="text">' + $("#newInput").val() + '</p><i class="fa fa-check-square"></i></li>');
+			//this adds an item to the list with the same formatting as the ones that are already there
+			};
 		$('#newInput').val("");
 		//this just clears the previous input from the text box
 		$('li').on('click', function(){
@@ -25,7 +27,10 @@ $(document).ready(function(){
 	});
 
 	$('.fa').on('click', function(){
-		$(this).parent().slideUp(200);
+		$(this).parent().fadeOut(500 ,function(){
+			$(this).remove();
+
+		});
 		$(this).parent().hasClass('complete');
 	});
 

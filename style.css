@@ -34,7 +34,7 @@ ul {
 
 .fa {
 	float: right;
-	padding: 2px;
+	margin: 2px;
 
 }
 
@@ -47,6 +47,10 @@ li {
 	border: 3px solid #ffffff;
 	font-size: 22px;
 	min-height: 25px;
+}
+
+.text {
+	display: inline;
 
 }
 
